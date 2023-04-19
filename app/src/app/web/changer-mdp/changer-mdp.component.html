@@ -1,0 +1,48 @@
+<div class="full_container">
+    <div class="container">
+       <div class="center verticle_center full_height">
+          <div class="login_section">
+             <div class="logo_login">
+                <div class="center">
+                   <img width="210" src="assets/images/logo/logo.png" alt="#" />
+                </div>
+             </div>
+             <div class="login_form">
+                <form [formGroup]="changermotdepasseForm" (submit)="OnSubmit()">
+                   <fieldset>
+                     <div class="field">
+                        <label class="label_field">Email </label>
+                        <input [formControlName]="'email'" type="text"  placeholder=" Email" />
+                        <span *ngIf="changermotdepasseForm.controls.email.hasError('pattern')" color="red" class="forgot" >
+                           L'adresse email doit se terminer par @actia-engineering.tn
+                         </span>
+
+                     </div>
+                      <div class="field">
+                         <label class="label_field">Ancien Mot de passe </label>
+                         <input [formControlName]="'mdpgenere'" type="password"  placeholder=" Ancien Mot de passe " />
+                      </div>
+                      <div class="field">
+                         <label class="label_field">Nouveau Mot de passe </label>
+                         <input [formControlName]="'nouveaumdp'"  type="password" placeholder="Nouveau Mot de passe" />
+                         <span class="invalid-email" *ngIf="changermotdepasseForm.controls.nouveaumdp.hasError('pattern')" class="forgot" >
+                           Mot de passe doit contenir une chiffre un majus et un minscule et un caractere speciale
+                         </span>
+                        </div>
+                      <div class="field">
+                        <label class="label_field">Retapper le mot de passe </label>
+                        <input [formControlName]="'resetnouveaumdp'" type="password"  placeholder="Retapper Mot de passe" />
+                     </div>
+                     
+                      <div class="field margin_0">
+                         <label class="label_field hidden">hidden label</label>
+                         <input type="submit" class="main_bt" value="Confirmer le mot de passe">
+                      </div>
+                   </fieldset>
+                </form>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+

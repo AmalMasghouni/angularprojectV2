@@ -1,0 +1,49 @@
+<div class="full_container">
+    <div class="container">
+       <div class="center verticle_center full_height">
+          <div class="login_section">
+             <div class="logo_login">
+                <div class="center">
+                   <img width="210" src="assets/images/logo/logo.png" alt="#" />
+                </div>
+             </div>
+             <div class="login_form">
+                <form [formGroup]="registrationForm" (submit)="OnSubmit()">
+                    <fieldset>
+                      <div class="field">
+                        <label class="label_field">Nom</label>
+                        <input type="text"  placeholder="Nom" [formControlName]="'nom'">
+                      </div>
+                      <div class="field">
+                        <label class="label_field">Prénom</label>
+                        <input type="text"  placeholder="Prénom" [formControlName]="'prenom'">
+                      </div>
+                      <div class="field">
+                        <label class="label_field">Email Address</label>
+                        <input type="email"  placeholder="E-mail" [formControlName]="'email'" [ngClass]="{'invalid-email': registrationForm.get('email')?.invalid && registrationForm.get('email')?.dirty}" >
+                        <span *ngIf="registrationForm.controls.email.hasError('pattern')" color="red" class="forgot" >
+                          L'adresse email doit se terminer par @actia-engineering.tn
+                        </span>
+                       
+                      </div>
+                      <div class="field">
+                        <label class="label_field">Password</label>
+                        <input type="password" id="password" placeholder="Password" [formControlName]="'password'">
+                        <span class="invalid-email" *ngIf="registrationForm.controls.password.hasError('pattern')" class="forgot" >
+                          Mot de passe doit contenir une chiffre un majus et un minscule et un caractere speciale
+                        </span>
+                      </div>
+                      <div class="field margin_0">
+                        <label class="label_field hidden">hidden label</label>
+                        <input type="submit" class="main_bt" value="Register">
+                        
+                      </div>
+                    </fieldset>
+                  </form>
+                  
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ 

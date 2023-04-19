@@ -1,0 +1,139 @@
+
+<div class="row column1">
+    <div class="col-md-12">
+       <div class="white_shd full margin_bottom_30">
+          <div class="full graph_head">
+             <div class="heading1 margin_0">
+                
+
+<!-- Première ligne   -->
+<form [formGroup]="form" (submit)="filtrer()" >
+<div class="row">
+<div class="col-md-5">
+   <label>Marque :</label>
+   <select formControlName="marque" (change)="onSelectMarque($event)"  >
+     <option [selected]="selectedOptionModele === ''" value="">Sélectionner une marque</option>
+     <option *ngFor="let option of optionsMarque" [value]="option">{{option}}</option>
+   </select>
+ </div>
+ <div class="col-md-5">
+   <label>Sites :</label>
+   <select formControlName="site" (change)="onSelectSite($event)" >
+     <option [selected]="selectedOptionSite === ''" value="">Sélectionner un site</option>
+     <option *ngFor="let option of optionsSite" [value]="option">{{option}}</option>
+   </select>
+ </div>
+ 
+</div>
+ <!-- Deuxième ligne -->
+ <div class="row">
+ <div class="col-md-5">
+   <label>Modèle :</label>
+   <select formControlName="modele" (change)="onSelectModele($event)" >
+     <option [selected]="selectedOptionModele === '' " value="">Sélectionner un modèle</option>
+     <option *ngFor="let option of optionsModele" [value]="option">{{option}}</option>
+   </select>
+ </div>
+ <div class="col-md-5">
+   <label>Développeur :</label>
+   <select formControlName="dev" (change)="onSelectDev($event)"  >
+    <option [selected]="selectedOptionDev === ''" value="">Sélectionner developpeur</option>
+    <option *ngFor="let option of optionsDev" [value]="option">{{option}}</option>
+  </select>
+   
+ </div>
+ <div class="col-md-5">
+  <label >Version :</label>
+  <select formControlName="version" (change)="onSelectVersion($event)"   >
+    <option [selected]="selectedOptionVersion === '' ? true : null" value="">Sélectionner une version</option>
+    <option *ngFor="let option of optionsVersion" [value]="option">{{option}}</option>
+  </select>
+</div>
+<div class="col-md-5">
+  <label>CDC :</label>
+  <select formControlName="cdc"  (change)="onSelectCdc($event)"   >
+   <option [selected]="selectedOptionCdc === ''" value="">Sélectionner Cdc</option>
+   <option value="cdcdvameur" >Scdff</option>
+   <option *ngFor="let option of optionsCdc" [value]="option">{{option}}</option>
+   </select>
+</div>
+
+ 
+</div>
+ <!-- Boutons -->
+ <div class="row">
+  <div class="col-md-5">
+    <button class="btn-secondary"  type="submit">Appliquer La recherche pour tous les filtres</button></div>
+    <div class="col-md-5">
+    <button class="btn-secondary" (click)="resetFilters()">Réinitialiser les filtres</button>
+  </div>
+  </div>
+</form>
+</div>  
+  
+ <!-- Troisième ligne -->
+ <div class="row">
+ 
+  <div class="col-md-2">
+    <label>N°DLL :</label>
+    <input type="text" placeholder="N°DLL">
+    <button class="btn-secondary">DLL</button>
+  </div>
+  <div class="col-md-2">
+   <label>N°DEV :</label>
+   <input type="text" placeholder="N°DEV">
+ <button class="btn-secondary">N°DEV</button>
+   
+ </div>
+ 
+</div>
+
+
+          </div>
+          <div class="full price_table padding_infor_info">
+             <div class="row">
+                <div class="col-lg-12">
+                   <div class="table-responsive-sm">
+                      <table class="table table-striped projects">
+                         <thead class="thead-dark">
+                            <tr>
+                               <th style="width: 2%">N</th>
+                                <th style="width: 50%">Nom</th>
+                               <th>Etat</th>
+                               <th>CDC</th>
+                               <th>nomCDC</th>
+                               <th>DLL</th>
+                               <th>Famille</th>
+                               <th>ECU</th>
+                               <th>BUG</th>
+                               <th>Developpeur </th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <tr *ngFor="let dev of tableauDevs "
+                            [ngClass]="{'selected': dev.selected}" 
+      (click)="selectItem(dev)">
+                              <td>{{dev.n}}</td>
+                              <td>{{dev.nom}}</td>
+                              <td>{{dev.etat}}</td>
+                              <td>{{dev.cdc}}</td>
+                              <td>{{dev.nomCdc}}</td>
+                              <td>{{dev.dll}}</td>
+                              <td>{{dev.famille}}</td>
+                              <td>{{dev.ecu}}</td>
+                              <td>{{dev.bug}}</td>
+                              <td>{{dev.developpeur}}</td>
+                              
+                            </tr>
+                         </tbody>
+                      </table>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!-- end row -->
+ </div>
+
+ 

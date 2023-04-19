@@ -1,0 +1,47 @@
+<div class="full_container">
+   <div class="container">
+      <div class="center verticle_center full_height">
+         <div class="login_section">
+            <div class="logo_login">
+               <div class="center">
+                  <img width="210" src="assets/images/logo/logo.png" alt="#" />
+               </div>
+            </div>
+            <div class="login_form">
+               <form   [formGroup]="loginForm" (submit)="onSubmit()">
+                  <fieldset>
+                     <div class="field">
+                        <label class="label_field">Email Address</label>
+                        <input [formControlName]="'email'"  type="email" placeholder="E-mail" />
+                        <span *ngIf="loginForm.controls.email.hasError('pattern')" color="red" class="forgot" >
+                           L'adresse email doit se terminer par @actia-engineering.tn
+                         </span>
+
+                        
+                     </div>
+                     <div class="field">
+                        <label class="label_field">Password</label>
+                        <input [formControlName]="'password'" type="password" placeholder="Password" />
+                       
+                     </div>
+                     <div class="field">
+                        <label class="label_field hidden">hidden label</label>
+                        
+                        <a class="forgot" routerLink="/mot-de-passe-oublie">Mot de passe oublié ?</a>
+                     </div>
+                     <div class="field margin_0">
+                        <label class="label_field hidden">hidden label</label>
+                        <input type="submit" class="main_bt" value="Sing In">
+                        
+                    </div>
+                     <div class="field margin_0">
+                       <label class="label_field hidden">hidden label</label>
+                       <a class="register" routerLink="/register">Je ne suis pas inscrit</a>
+                    </div>
+                  </fieldset>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

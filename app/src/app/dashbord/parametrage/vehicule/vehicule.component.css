@@ -1,0 +1,62 @@
+.btn-secondary {
+    background-color: #546472;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #00AE4E;
+  }
+  
+  /* Ajouter un espace entre les deux boutons */
+  .col-md-2:nth-child(2) button {
+    margin-left: 10px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  label {
+    margin-top: 10px;
+  }
+  
+  select, input[type="text"], textarea, input[type="date"] {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 250px;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  select[multiple] {
+    height: 100px;
+  }
+
+  label {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  label[for="option1"] {
+    margin-right: 20px;
+  }
+  
+  
+  
+  
